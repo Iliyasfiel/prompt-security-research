@@ -1,0 +1,25 @@
+# Internal document rendering checks
+qa/
+
+# Local environment and credentials
+.env
+.env.*
+*.pem
+*.key
+id_rsa
+id_ed25519
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Codex-local state
+.codex/

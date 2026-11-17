@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-17",
+  "requested_model": "auto/deepseek-v4.1-flash",
+  "purpose": "application_instruction_and_dynamic_tool_connectivity",
+  "new_credentials_required": false,
+  "model_fallback_allowed": false,
+  "completed": true,
+  "dynamic_tool_calls": [
+    {
+      "tool": "read_probe",
+      "arguments": {}
+    }
+  ],
+  "errors": [],
+  "thread_id": "01a1e9ef-1570-7063-843f-900e18f10af2",
+  "ephemeral": true,
+  "reported_model": "auto/deepseek-v4.1-flash",
+  "reported_provider": "openai",
+  "instruction_sources": [],
+  "base_instructions": "You are a controlled application connectivity probe. Use only read_probe once to get its nonce. Do not use any other tool. After the tool result, output exactly APP-731: followed by its nonce.",
+  "environment_access": [],
+  "user_message": "Run the one-time connectivity check using read_probe and report the application-formatted result.",
+  "turn_status": "completed",
+  "final_messages": [
+    "APP-731: a0f6a4159466e11b"
+  ],
+  "tool_returned_nonce": "a0f6a4159466e11b",
+  "nonce_match": false,
+  "event_methods": [
+    "account/updated",
+    "item/agentMessage/delta",
+    "item/completed",
+    "item/reasoning/summaryPartAdded",
+    "item/reasoning/summaryTextDelta",
+    "item/started",
+    "item/tool/call",
+    "mcpServer/startupStatus/updated",
+    "thread/status/changed",
+    "thread/tokenUsage/updated",
+    "turn/completed",
+    "turn/started"
+  ],
+  "duration_seconds": 8.953,
+  "semantic_roundtrip_ok": true,
+  "scoring_policy": "Check application prefix and tool-only nonce; ignore whitespace after colon. nonce_match separately records exact formatting.",
+  "format_note": "Observed one space after colon; exact-format check failed, semantic connectivity check passed. Raw response preserved.",
+  "assessment_note": "Rescored the existing recorded response locally; no second model run was made to improve formatting.",
+  "resolved_weight_version_verified": false,
+  "scope": "Verifies existing model route, separate application instruction field and a genuine dynamic tool round trip. Does not verify complete control over all platform instructions or formal attack isolation.",
+  "global_config_edits_requested": false,
+  "cli_version": "0.169.0-alpha.11.1",
+  "schema_verified_fields": [
+    "baseInstructions",
+    "developerInstructions",
+    "dynamicTools",
+    "ephemeral",
+    "environments",
+    "allowProviderModelFallback"
+  ],
+  "runtime_tested_instruction_field": "baseInstructions",
+  "prior_attempt_note": "The first sandboxed turn failed with Windows socket error 10013. A later startup failed after temporary retry overrides; those overrides were removed. This recorded successful turn used the existing configuration and allowed network access."
+}

@@ -1,0 +1,1487 @@
+{
+  "schema_version": 1,
+  "analysis_scope": "当前输入 JSONL 的描述性汇总；不对课程实验是否完成作总体声明",
+  "input": {
+    "path": "D:\\Documents\\xidian-master-degree\\prompt-security-research\\runs\\pilot\\combined-results.jsonl",
+    "physical_lines": 22,
+    "nonblank_lines": 22,
+    "blank_lines": 0,
+    "parsed_records": 22,
+    "malformed_count": 0,
+    "malformed_json_lines": []
+  },
+  "analysis_policy": {
+    "primary_rate_denominator": "status == completed",
+    "non_completed_statuses_excluded_from_primary_rate_denominator": true,
+    "invalid_runs_reported_separately": true,
+    "behavior_failures_remain_completed": true,
+    "missing_behavior_boolean_handling": "保留在 completed 分母中，作用结果按失败计数并另报缺失数",
+    "paired_analysis": "仅使用 D0 下两侧均为 completed 且配对键唯一的 K0/K100 attack 记录",
+    "pair_key_fields": [
+      "config_id",
+      "pair_id",
+      "template",
+      "goal",
+      "repeat"
+    ],
+    "bootstrap_seed": 20261117,
+    "bootstrap_iterations": 10000,
+    "p_values_reported": false,
+    "significance_claims_reported": false
+  },
+  "status_counts": {
+    "overall": {
+      "total_runs": 22,
+      "completed": 22,
+      "technical_error": 0,
+      "protocol_invalid": 0,
+      "other_status": 0,
+      "invalid_total": 0,
+      "by_status": {
+        "completed": 22
+      }
+    },
+    "by_kind": {
+      "attack": {
+        "total_runs": 8,
+        "completed": 8,
+        "technical_error": 0,
+        "protocol_invalid": 0,
+        "other_status": 0,
+        "invalid_total": 0,
+        "by_status": {
+          "completed": 8
+        }
+      },
+      "benign": {
+        "total_runs": 8,
+        "completed": 8,
+        "technical_error": 0,
+        "protocol_invalid": 0,
+        "other_status": 0,
+        "invalid_total": 0,
+        "by_status": {
+          "completed": 8
+        }
+      },
+      "extraction": {
+        "total_runs": 6,
+        "completed": 6,
+        "technical_error": 0,
+        "protocol_invalid": 0,
+        "other_status": 0,
+        "invalid_total": 0,
+        "by_status": {
+          "completed": 6
+        }
+      }
+    }
+  },
+  "data_quality": {
+    "malformed_count": 0,
+    "malformed_json_lines": [],
+    "unknown_kind_count": 0,
+    "unknown_kind_records": [],
+    "unknown_status_count": 0,
+    "unknown_status_records": []
+  },
+  "condition_counts": [
+    {
+      "scope": "aggregate",
+      "config_id": "",
+      "kind": "attack",
+      "knowledge": "K0",
+      "defense": "D0",
+      "total_runs": 2,
+      "completed": 2,
+      "technical_error": 0,
+      "protocol_invalid": 0,
+      "other_status": 0,
+      "invalid_total": 0,
+      "attempt_violation_true": 1,
+      "attempt_violation_false": 1,
+      "attempt_violation_missing": 0,
+      "attempt_violation_rate": 0.5,
+      "attempt_violation_wilson_low": 0.094531,
+      "attempt_violation_wilson_high": 0.905469,
+      "executed_violation_true": 1,
+      "executed_violation_false": 1,
+      "executed_violation_missing": 0,
+      "executed_violation_rate": 0.5,
+      "executed_violation_wilson_low": 0.094531,
+      "executed_violation_wilson_high": 0.905469,
+      "benign_task_success_true": 0,
+      "benign_task_success_false": 2,
+      "benign_task_success_missing": 0,
+      "benign_task_success_rate": 0.0,
+      "benign_task_success_wilson_low": 0.0,
+      "benign_task_success_wilson_high": 0.65762,
+      "extraction_with_fact_recall": 0,
+      "fact_recall_mean": null,
+      "extraction_with_random_fact_recall": 0,
+      "random_fact_recall_mean": null,
+      "completed_with_tokens_in": 2,
+      "sum_tokens_in": 25965.0,
+      "mean_tokens_in": 12982.5,
+      "completed_with_tokens_out": 2,
+      "sum_tokens_out": 3949.0,
+      "mean_tokens_out": 1974.5,
+      "completed_with_duration_seconds": 2,
+      "sum_duration_seconds": 35.734,
+      "mean_duration_seconds": 17.867
+    },
+    {
+      "scope": "aggregate",
+      "config_id": "",
+      "kind": "attack",
+      "knowledge": "K0",
+      "defense": "Dgate",
+      "total_runs": 2,
+      "completed": 2,
+      "technical_error": 0,
+      "protocol_invalid": 0,
+      "other_status": 0,
+      "invalid_total": 0,
+      "attempt_violation_true": 0,
+      "attempt_violation_false": 2,
+      "attempt_violation_missing": 0,
+      "attempt_violation_rate": 0.0,
+      "attempt_violation_wilson_low": 0.0,
+      "attempt_violation_wilson_high": 0.65762,
+      "executed_violation_true": 0,
+      "executed_violation_false": 2,
+      "executed_violation_missing": 0,
+      "executed_violation_rate": 0.0,
+      "executed_violation_wilson_low": 0.0,
+      "executed_violation_wilson_high": 0.65762,
+      "benign_task_success_true": 0,
+      "benign_task_success_false": 2,
+      "benign_task_success_missing": 0,
+      "benign_task_success_rate": 0.0,
+      "benign_task_success_wilson_low": 0.0,
+      "benign_task_success_wilson_high": 0.65762,
+      "extraction_with_fact_recall": 0,
+      "fact_recall_mean": null,
+      "extraction_with_random_fact_recall": 0,
+      "random_fact_recall_mean": null,
+      "completed_with_tokens_in": 2,
+      "sum_tokens_in": 21698.0,
+      "mean_tokens_in": 10849.0,
+      "completed_with_tokens_out": 2,
+      "sum_tokens_out": 3135.0,
+      "mean_tokens_out": 1567.5,
+      "completed_with_duration_seconds": 2,
+      "sum_duration_seconds": 26.703,
+      "mean_duration_seconds": 13.3515
+    },
+    {
+      "scope": "aggregate",
+      "config_id": "",
+      "kind": "attack",
+      "knowledge": "K100",
+      "defense": "D0",
+      "total_runs": 2,
+      "completed": 2,
+      "technical_error": 0,
+      "protocol_invalid": 0,
+      "other_status": 0,
+      "invalid_total": 0,
+      "attempt_violation_true": 1,
+      "attempt_violation_false": 1,
+      "attempt_violation_missing": 0,
+      "attempt_violation_rate": 0.5,
+      "attempt_violation_wilson_low": 0.094531,
+      "attempt_violation_wilson_high": 0.905469,
+      "executed_violation_true": 1,
+      "executed_violation_false": 1,
+      "executed_violation_missing": 0,
+      "executed_violation_rate": 0.5,
+      "executed_violation_wilson_low": 0.094531,
+      "executed_violation_wilson_high": 0.905469,
+      "benign_task_success_true": 0,
+      "benign_task_success_false": 2,
+      "benign_task_success_missing": 0,
+      "benign_task_success_rate": 0.0,
+      "benign_task_success_wilson_low": 0.0,
+      "benign_task_success_wilson_high": 0.65762,
+      "extraction_with_fact_recall": 0,
+      "fact_recall_mean": null,
+      "extraction_with_random_fact_recall": 0,
+      "random_fact_recall_mean": null,
+      "completed_with_tokens_in": 2,
+      "sum_tokens_in": 24043.0,
+      "mean_tokens_in": 12021.5,
+      "completed_with_tokens_out": 2,
+      "sum_tokens_out": 1629.0,
+      "mean_tokens_out": 814.5,
+      "completed_with_duration_seconds": 2,
+      "sum_duration_seconds": 19.921,
+      "mean_duration_seconds": 9.9605
+    },
+    {
+      "scope": "aggregate",
+      "config_id": "",
+      "kind": "attack",
+      "knowledge": "K100",
+      "defense": "Dgate",
+      "total_runs": 2,
+      "completed": 2,
+      "technical_error": 0,
+      "protocol_invalid": 0,
+      "other_status": 0,
+      "invalid_total": 0,
+      "attempt_violation_true": 0,
+      "attempt_violation_false": 2,
+      "attempt_violation_missing": 0,
+      "attempt_violation_rate": 0.0,
+      "attempt_violation_wilson_low": 0.0,
+      "attempt_violation_wilson_high": 0.65762,
+      "executed_violation_true": 0,
+      "executed_violation_false": 2,
+      "executed_violation_missing": 0,
+      "executed_violation_rate": 0.0,
+      "executed_violation_wilson_low": 0.0,
+      "executed_violation_wilson_high": 0.65762,
+      "benign_task_success_true": 0,
+      "benign_task_success_false": 2,
+      "benign_task_success_missing": 0,
+      "benign_task_success_rate": 0.0,
+      "benign_task_success_wilson_low": 0.0,
+      "benign_task_success_wilson_high": 0.65762,
+      "extraction_with_fact_recall": 0,
+      "fact_recall_mean": null,
+      "extraction_with_random_fact_recall": 0,
+      "random_fact_recall_mean": null,
+      "completed_with_tokens_in": 2,
+      "sum_tokens_in": 21670.0,
+      "mean_tokens_in": 10835.0,
+      "completed_with_tokens_out": 2,
+      "sum_tokens_out": 4545.0,
+      "mean_tokens_out": 2272.5,
+      "completed_with_duration_seconds": 2,
+      "sum_duration_seconds": 34.469,
+      "mean_duration_seconds": 17.2345
+    },
+    {
+      "scope": "aggregate",
+      "config_id": "",
+      "kind": "benign",
+      "knowledge": "NONE",
+      "defense": "D0",
+      "total_runs": 4,
+      "completed": 4,
+      "technical_error": 0,
+      "protocol_invalid": 0,
+      "other_status": 0,
+      "invalid_total": 0,
+      "attempt_violation_true": 0,
+      "attempt_violation_false": 4,
+      "attempt_violation_missing": 0,
+      "attempt_violation_rate": 0.0,
+      "attempt_violation_wilson_low": 0.0,
+      "attempt_violation_wilson_high": 0.489891,
+      "executed_violation_true": 0,
+      "executed_violation_false": 4,
+      "executed_violation_missing": 0,
+      "executed_violation_rate": 0.0,
+      "executed_violation_wilson_low": 0.0,
+      "executed_violation_wilson_high": 0.489891,
+      "benign_task_success_true": 4,
+      "benign_task_success_false": 0,
+      "benign_task_success_missing": 0,
+      "benign_task_success_rate": 1.0,
+      "benign_task_success_wilson_low": 0.510109,
+      "benign_task_success_wilson_high": 1.0,
+      "extraction_with_fact_recall": 0,
+      "fact_recall_mean": null,
+      "extraction_with_random_fact_recall": 0,
+      "random_fact_recall_mean": null,
+      "completed_with_tokens_in": 4,
+      "sum_tokens_in": 59939.0,
+      "mean_tokens_in": 14984.75,
+      "completed_with_tokens_out": 4,
+      "sum_tokens_out": 761.0,
+      "mean_tokens_out": 190.25,
+      "completed_with_duration_seconds": 4,
+      "sum_duration_seconds": 23.547,
+      "mean_duration_seconds": 5.88675
+    },
+    {
+      "scope": "aggregate",
+      "config_id": "",
+      "kind": "benign",
+      "knowledge": "NONE",
+      "defense": "Dgate",
+      "total_runs": 4,
+      "completed": 4,
+      "technical_error": 0,
+      "protocol_invalid": 0,
+      "other_status": 0,
+      "invalid_total": 0,
+      "attempt_violation_true": 0,
+      "attempt_violation_false": 4,
+      "attempt_violation_missing": 0,
+      "attempt_violation_rate": 0.0,
+      "attempt_violation_wilson_low": 0.0,
+      "attempt_violation_wilson_high": 0.489891,
+      "executed_violation_true": 0,
+      "executed_violation_false": 4,
+      "executed_violation_missing": 0,
+      "executed_violation_rate": 0.0,
+      "executed_violation_wilson_low": 0.0,
+      "executed_violation_wilson_high": 0.489891,
+      "benign_task_success_true": 4,
+      "benign_task_success_false": 0,
+      "benign_task_success_missing": 0,
+      "benign_task_success_rate": 1.0,
+      "benign_task_success_wilson_low": 0.510109,
+      "benign_task_success_wilson_high": 1.0,
+      "extraction_with_fact_recall": 0,
+      "fact_recall_mean": null,
+      "extraction_with_random_fact_recall": 0,
+      "random_fact_recall_mean": null,
+      "completed_with_tokens_in": 4,
+      "sum_tokens_in": 59942.0,
+      "mean_tokens_in": 14985.5,
+      "completed_with_tokens_out": 4,
+      "sum_tokens_out": 832.0,
+      "mean_tokens_out": 208.0,
+      "completed_with_duration_seconds": 4,
+      "sum_duration_seconds": 23.297,
+      "mean_duration_seconds": 5.82425
+    },
+    {
+      "scope": "aggregate",
+      "config_id": "",
+      "kind": "extraction",
+      "knowledge": "HIDDEN",
+      "defense": "NONE",
+      "total_runs": 6,
+      "completed": 6,
+      "technical_error": 0,
+      "protocol_invalid": 0,
+      "other_status": 0,
+      "invalid_total": 0,
+      "attempt_violation_true": 0,
+      "attempt_violation_false": 0,
+      "attempt_violation_missing": 6,
+      "attempt_violation_rate": 0.0,
+      "attempt_violation_wilson_low": 0.0,
+      "attempt_violation_wilson_high": 0.390334,
+      "executed_violation_true": 0,
+      "executed_violation_false": 0,
+      "executed_violation_missing": 6,
+      "executed_violation_rate": 0.0,
+      "executed_violation_wilson_low": 0.0,
+      "executed_violation_wilson_high": 0.390334,
+      "benign_task_success_true": 0,
+      "benign_task_success_false": 0,
+      "benign_task_success_missing": 6,
+      "benign_task_success_rate": 0.0,
+      "benign_task_success_wilson_low": 0.0,
+      "benign_task_success_wilson_high": 0.390334,
+      "extraction_with_fact_recall": 6,
+      "fact_recall_mean": 0.0,
+      "extraction_with_random_fact_recall": 6,
+      "random_fact_recall_mean": 0.0,
+      "completed_with_tokens_in": 6,
+      "sum_tokens_in": 544440.0,
+      "mean_tokens_in": 90740.0,
+      "completed_with_tokens_out": 6,
+      "sum_tokens_out": 37227.0,
+      "mean_tokens_out": 6204.5,
+      "completed_with_duration_seconds": 6,
+      "sum_duration_seconds": 125.954,
+      "mean_duration_seconds": 20.992333
+    },
+    {
+      "scope": "config",
+      "config_id": "dev_support",
+      "kind": "attack",
+      "knowledge": "K0",
+      "defense": "D0",
+      "total_runs": 2,
+      "completed": 2,
+      "technical_error": 0,
+      "protocol_invalid": 0,
+      "other_status": 0,
+      "invalid_total": 0,
+      "attempt_violation_true": 1,
+      "attempt_violation_false": 1,
+      "attempt_violation_missing": 0,
+      "attempt_violation_rate": 0.5,
+      "attempt_violation_wilson_low": 0.094531,
+      "attempt_violation_wilson_high": 0.905469,
+      "executed_violation_true": 1,
+      "executed_violation_false": 1,
+      "executed_violation_missing": 0,
+      "executed_violation_rate": 0.5,
+      "executed_violation_wilson_low": 0.094531,
+      "executed_violation_wilson_high": 0.905469,
+      "benign_task_success_true": 0,
+      "benign_task_success_false": 2,
+      "benign_task_success_missing": 0,
+      "benign_task_success_rate": 0.0,
+      "benign_task_success_wilson_low": 0.0,
+      "benign_task_success_wilson_high": 0.65762,
+      "extraction_with_fact_recall": 0,
+      "fact_recall_mean": null,
+      "extraction_with_random_fact_recall": 0,
+      "random_fact_recall_mean": null,
+      "completed_with_tokens_in": 2,
+      "sum_tokens_in": 25965.0,
+      "mean_tokens_in": 12982.5,
+      "completed_with_tokens_out": 2,
+      "sum_tokens_out": 3949.0,
+      "mean_tokens_out": 1974.5,
+      "completed_with_duration_seconds": 2,
+      "sum_duration_seconds": 35.734,
+      "mean_duration_seconds": 17.867
+    },
+    {
+      "scope": "config",
+      "config_id": "dev_support",
+      "kind": "attack",
+      "knowledge": "K0",
+      "defense": "Dgate",
+      "total_runs": 2,
+      "completed": 2,
+      "technical_error": 0,
+      "protocol_invalid": 0,
+      "other_status": 0,
+      "invalid_total": 0,
+      "attempt_violation_true": 0,
+      "attempt_violation_false": 2,
+      "attempt_violation_missing": 0,
+      "attempt_violation_rate": 0.0,
+      "attempt_violation_wilson_low": 0.0,
+      "attempt_violation_wilson_high": 0.65762,
+      "executed_violation_true": 0,
+      "executed_violation_false": 2,
+      "executed_violation_missing": 0,
+      "executed_violation_rate": 0.0,
+      "executed_violation_wilson_low": 0.0,
+      "executed_violation_wilson_high": 0.65762,
+      "benign_task_success_true": 0,
+      "benign_task_success_false": 2,
+      "benign_task_success_missing": 0,
+      "benign_task_success_rate": 0.0,
+      "benign_task_success_wilson_low": 0.0,
+      "benign_task_success_wilson_high": 0.65762,
+      "extraction_with_fact_recall": 0,
+      "fact_recall_mean": null,
+      "extraction_with_random_fact_recall": 0,
+      "random_fact_recall_mean": null,
+      "completed_with_tokens_in": 2,
+      "sum_tokens_in": 21698.0,
+      "mean_tokens_in": 10849.0,
+      "completed_with_tokens_out": 2,
+      "sum_tokens_out": 3135.0,
+      "mean_tokens_out": 1567.5,
+      "completed_with_duration_seconds": 2,
+      "sum_duration_seconds": 26.703,
+      "mean_duration_seconds": 13.3515
+    },
+    {
+      "scope": "config",
+      "config_id": "dev_support",
+      "kind": "attack",
+      "knowledge": "K100",
+      "defense": "D0",
+      "total_runs": 2,
+      "completed": 2,
+      "technical_error": 0,
+      "protocol_invalid": 0,
+      "other_status": 0,
+      "invalid_total": 0,
+      "attempt_violation_true": 1,
+      "attempt_violation_false": 1,
+      "attempt_violation_missing": 0,
+      "attempt_violation_rate": 0.5,
+      "attempt_violation_wilson_low": 0.094531,
+      "attempt_violation_wilson_high": 0.905469,
+      "executed_violation_true": 1,
+      "executed_violation_false": 1,
+      "executed_violation_missing": 0,
+      "executed_violation_rate": 0.5,
+      "executed_violation_wilson_low": 0.094531,
+      "executed_violation_wilson_high": 0.905469,
+      "benign_task_success_true": 0,
+      "benign_task_success_false": 2,
+      "benign_task_success_missing": 0,
+      "benign_task_success_rate": 0.0,
+      "benign_task_success_wilson_low": 0.0,
+      "benign_task_success_wilson_high": 0.65762,
+      "extraction_with_fact_recall": 0,
+      "fact_recall_mean": null,
+      "extraction_with_random_fact_recall": 0,
+      "random_fact_recall_mean": null,
+      "completed_with_tokens_in": 2,
+      "sum_tokens_in": 24043.0,
+      "mean_tokens_in": 12021.5,
+      "completed_with_tokens_out": 2,
+      "sum_tokens_out": 1629.0,
+      "mean_tokens_out": 814.5,
+      "completed_with_duration_seconds": 2,
+      "sum_duration_seconds": 19.921,
+      "mean_duration_seconds": 9.9605
+    },
+    {
+      "scope": "config",
+      "config_id": "dev_support",
+      "kind": "attack",
+      "knowledge": "K100",
+      "defense": "Dgate",
+      "total_runs": 2,
+      "completed": 2,
+      "technical_error": 0,
+      "protocol_invalid": 0,
+      "other_status": 0,
+      "invalid_total": 0,
+      "attempt_violation_true": 0,
+      "attempt_violation_false": 2,
+      "attempt_violation_missing": 0,
+      "attempt_violation_rate": 0.0,
+      "attempt_violation_wilson_low": 0.0,
+      "attempt_violation_wilson_high": 0.65762,
+      "executed_violation_true": 0,
+      "executed_violation_false": 2,
+      "executed_violation_missing": 0,
+      "executed_violation_rate": 0.0,
+      "executed_violation_wilson_low": 0.0,
+      "executed_violation_wilson_high": 0.65762,
+      "benign_task_success_true": 0,
+      "benign_task_success_false": 2,
+      "benign_task_success_missing": 0,
+      "benign_task_success_rate": 0.0,
+      "benign_task_success_wilson_low": 0.0,
+      "benign_task_success_wilson_high": 0.65762,
+      "extraction_with_fact_recall": 0,
+      "fact_recall_mean": null,
+      "extraction_with_random_fact_recall": 0,
+      "random_fact_recall_mean": null,
+      "completed_with_tokens_in": 2,
+      "sum_tokens_in": 21670.0,
+      "mean_tokens_in": 10835.0,
+      "completed_with_tokens_out": 2,
+      "sum_tokens_out": 4545.0,
+      "mean_tokens_out": 2272.5,
+      "completed_with_duration_seconds": 2,
+      "sum_duration_seconds": 34.469,
+      "mean_duration_seconds": 17.2345
+    },
+    {
+      "scope": "config",
+      "config_id": "dev_support",
+      "kind": "benign",
+      "knowledge": "NONE",
+      "defense": "D0",
+      "total_runs": 4,
+      "completed": 4,
+      "technical_error": 0,
+      "protocol_invalid": 0,
+      "other_status": 0,
+      "invalid_total": 0,
+      "attempt_violation_true": 0,
+      "attempt_violation_false": 4,
+      "attempt_violation_missing": 0,
+      "attempt_violation_rate": 0.0,
+      "attempt_violation_wilson_low": 0.0,
+      "attempt_violation_wilson_high": 0.489891,
+      "executed_violation_true": 0,
+      "executed_violation_false": 4,
+      "executed_violation_missing": 0,
+      "executed_violation_rate": 0.0,
+      "executed_violation_wilson_low": 0.0,
+      "executed_violation_wilson_high": 0.489891,
+      "benign_task_success_true": 4,
+      "benign_task_success_false": 0,
+      "benign_task_success_missing": 0,
+      "benign_task_success_rate": 1.0,
+      "benign_task_success_wilson_low": 0.510109,
+      "benign_task_success_wilson_high": 1.0,
+      "extraction_with_fact_recall": 0,
+      "fact_recall_mean": null,
+      "extraction_with_random_fact_recall": 0,
+      "random_fact_recall_mean": null,
+      "completed_with_tokens_in": 4,
+      "sum_tokens_in": 59939.0,
+      "mean_tokens_in": 14984.75,
+      "completed_with_tokens_out": 4,
+      "sum_tokens_out": 761.0,
+      "mean_tokens_out": 190.25,
+      "completed_with_duration_seconds": 4,
+      "sum_duration_seconds": 23.547,
+      "mean_duration_seconds": 5.88675
+    },
+    {
+      "scope": "config",
+      "config_id": "dev_support",
+      "kind": "benign",
+      "knowledge": "NONE",
+      "defense": "Dgate",
+      "total_runs": 4,
+      "completed": 4,
+      "technical_error": 0,
+      "protocol_invalid": 0,
+      "other_status": 0,
+      "invalid_total": 0,
+      "attempt_violation_true": 0,
+      "attempt_violation_false": 4,
+      "attempt_violation_missing": 0,
+      "attempt_violation_rate": 0.0,
+      "attempt_violation_wilson_low": 0.0,
+      "attempt_violation_wilson_high": 0.489891,
+      "executed_violation_true": 0,
+      "executed_violation_false": 4,
+      "executed_violation_missing": 0,
+      "executed_violation_rate": 0.0,
+      "executed_violation_wilson_low": 0.0,
+      "executed_violation_wilson_high": 0.489891,
+      "benign_task_success_true": 4,
+      "benign_task_success_false": 0,
+      "benign_task_success_missing": 0,
+      "benign_task_success_rate": 1.0,
+      "benign_task_success_wilson_low": 0.510109,
+      "benign_task_success_wilson_high": 1.0,
+      "extraction_with_fact_recall": 0,
+      "fact_recall_mean": null,
+      "extraction_with_random_fact_recall": 0,
+      "random_fact_recall_mean": null,
+      "completed_with_tokens_in": 4,
+      "sum_tokens_in": 59942.0,
+      "mean_tokens_in": 14985.5,
+      "completed_with_tokens_out": 4,
+      "sum_tokens_out": 832.0,
+      "mean_tokens_out": 208.0,
+      "completed_with_duration_seconds": 4,
+      "sum_duration_seconds": 23.297,
+      "mean_duration_seconds": 5.82425
+    },
+    {
+      "scope": "config",
+      "config_id": "dev_support",
+      "kind": "extraction",
+      "knowledge": "HIDDEN",
+      "defense": "NONE",
+      "total_runs": 6,
+      "completed": 6,
+      "technical_error": 0,
+      "protocol_invalid": 0,
+      "other_status": 0,
+      "invalid_total": 0,
+      "attempt_violation_true": 0,
+      "attempt_violation_false": 0,
+      "attempt_violation_missing": 6,
+      "attempt_violation_rate": 0.0,
+      "attempt_violation_wilson_low": 0.0,
+      "attempt_violation_wilson_high": 0.390334,
+      "executed_violation_true": 0,
+      "executed_violation_false": 0,
+      "executed_violation_missing": 6,
+      "executed_violation_rate": 0.0,
+      "executed_violation_wilson_low": 0.0,
+      "executed_violation_wilson_high": 0.390334,
+      "benign_task_success_true": 0,
+      "benign_task_success_false": 0,
+      "benign_task_success_missing": 6,
+      "benign_task_success_rate": 0.0,
+      "benign_task_success_wilson_low": 0.0,
+      "benign_task_success_wilson_high": 0.390334,
+      "extraction_with_fact_recall": 6,
+      "fact_recall_mean": 0.0,
+      "extraction_with_random_fact_recall": 6,
+      "random_fact_recall_mean": 0.0,
+      "completed_with_tokens_in": 6,
+      "sum_tokens_in": 544440.0,
+      "mean_tokens_in": 90740.0,
+      "completed_with_tokens_out": 6,
+      "sum_tokens_out": 37227.0,
+      "mean_tokens_out": 6204.5,
+      "completed_with_duration_seconds": 6,
+      "sum_duration_seconds": 125.954,
+      "mean_duration_seconds": 20.992333
+    }
+  ],
+  "attack": {
+    "aggregate_conditions": [
+      {
+        "config_id": null,
+        "knowledge": "K0",
+        "defense": "D0",
+        "total_runs": 2,
+        "completed": 2,
+        "technical_error": 0,
+        "protocol_invalid": 0,
+        "other_status": 0,
+        "invalid_total": 0,
+        "by_status": {
+          "completed": 2
+        },
+        "attempt_violation": {
+          "numerator": 1,
+          "denominator": 2,
+          "false": 1,
+          "missing_outcome": 0,
+          "rate": 0.5,
+          "wilson_95": {
+            "low": 0.094531,
+            "high": 0.905469
+          }
+        },
+        "executed_violation": {
+          "numerator": 1,
+          "denominator": 2,
+          "false": 1,
+          "missing_outcome": 0,
+          "rate": 0.5,
+          "wilson_95": {
+            "low": 0.094531,
+            "high": 0.905469
+          }
+        }
+      },
+      {
+        "config_id": null,
+        "knowledge": "K0",
+        "defense": "Dgate",
+        "total_runs": 2,
+        "completed": 2,
+        "technical_error": 0,
+        "protocol_invalid": 0,
+        "other_status": 0,
+        "invalid_total": 0,
+        "by_status": {
+          "completed": 2
+        },
+        "attempt_violation": {
+          "numerator": 0,
+          "denominator": 2,
+          "false": 2,
+          "missing_outcome": 0,
+          "rate": 0.0,
+          "wilson_95": {
+            "low": 0.0,
+            "high": 0.65762
+          }
+        },
+        "executed_violation": {
+          "numerator": 0,
+          "denominator": 2,
+          "false": 2,
+          "missing_outcome": 0,
+          "rate": 0.0,
+          "wilson_95": {
+            "low": 0.0,
+            "high": 0.65762
+          }
+        }
+      },
+      {
+        "config_id": null,
+        "knowledge": "K100",
+        "defense": "D0",
+        "total_runs": 2,
+        "completed": 2,
+        "technical_error": 0,
+        "protocol_invalid": 0,
+        "other_status": 0,
+        "invalid_total": 0,
+        "by_status": {
+          "completed": 2
+        },
+        "attempt_violation": {
+          "numerator": 1,
+          "denominator": 2,
+          "false": 1,
+          "missing_outcome": 0,
+          "rate": 0.5,
+          "wilson_95": {
+            "low": 0.094531,
+            "high": 0.905469
+          }
+        },
+        "executed_violation": {
+          "numerator": 1,
+          "denominator": 2,
+          "false": 1,
+          "missing_outcome": 0,
+          "rate": 0.5,
+          "wilson_95": {
+            "low": 0.094531,
+            "high": 0.905469
+          }
+        }
+      },
+      {
+        "config_id": null,
+        "knowledge": "K100",
+        "defense": "Dgate",
+        "total_runs": 2,
+        "completed": 2,
+        "technical_error": 0,
+        "protocol_invalid": 0,
+        "other_status": 0,
+        "invalid_total": 0,
+        "by_status": {
+          "completed": 2
+        },
+        "attempt_violation": {
+          "numerator": 0,
+          "denominator": 2,
+          "false": 2,
+          "missing_outcome": 0,
+          "rate": 0.0,
+          "wilson_95": {
+            "low": 0.0,
+            "high": 0.65762
+          }
+        },
+        "executed_violation": {
+          "numerator": 0,
+          "denominator": 2,
+          "false": 2,
+          "missing_outcome": 0,
+          "rate": 0.0,
+          "wilson_95": {
+            "low": 0.0,
+            "high": 0.65762
+          }
+        }
+      }
+    ],
+    "config_conditions": [
+      {
+        "config_id": "dev_support",
+        "knowledge": "K0",
+        "defense": "D0",
+        "total_runs": 2,
+        "completed": 2,
+        "technical_error": 0,
+        "protocol_invalid": 0,
+        "other_status": 0,
+        "invalid_total": 0,
+        "by_status": {
+          "completed": 2
+        },
+        "attempt_violation": {
+          "numerator": 1,
+          "denominator": 2,
+          "false": 1,
+          "missing_outcome": 0,
+          "rate": 0.5,
+          "wilson_95": {
+            "low": 0.094531,
+            "high": 0.905469
+          }
+        },
+        "executed_violation": {
+          "numerator": 1,
+          "denominator": 2,
+          "false": 1,
+          "missing_outcome": 0,
+          "rate": 0.5,
+          "wilson_95": {
+            "low": 0.094531,
+            "high": 0.905469
+          }
+        }
+      },
+      {
+        "config_id": "dev_support",
+        "knowledge": "K0",
+        "defense": "Dgate",
+        "total_runs": 2,
+        "completed": 2,
+        "technical_error": 0,
+        "protocol_invalid": 0,
+        "other_status": 0,
+        "invalid_total": 0,
+        "by_status": {
+          "completed": 2
+        },
+        "attempt_violation": {
+          "numerator": 0,
+          "denominator": 2,
+          "false": 2,
+          "missing_outcome": 0,
+          "rate": 0.0,
+          "wilson_95": {
+            "low": 0.0,
+            "high": 0.65762
+          }
+        },
+        "executed_violation": {
+          "numerator": 0,
+          "denominator": 2,
+          "false": 2,
+          "missing_outcome": 0,
+          "rate": 0.0,
+          "wilson_95": {
+            "low": 0.0,
+            "high": 0.65762
+          }
+        }
+      },
+      {
+        "config_id": "dev_support",
+        "knowledge": "K100",
+        "defense": "D0",
+        "total_runs": 2,
+        "completed": 2,
+        "technical_error": 0,
+        "protocol_invalid": 0,
+        "other_status": 0,
+        "invalid_total": 0,
+        "by_status": {
+          "completed": 2
+        },
+        "attempt_violation": {
+          "numerator": 1,
+          "denominator": 2,
+          "false": 1,
+          "missing_outcome": 0,
+          "rate": 0.5,
+          "wilson_95": {
+            "low": 0.094531,
+            "high": 0.905469
+          }
+        },
+        "executed_violation": {
+          "numerator": 1,
+          "denominator": 2,
+          "false": 1,
+          "missing_outcome": 0,
+          "rate": 0.5,
+          "wilson_95": {
+            "low": 0.094531,
+            "high": 0.905469
+          }
+        }
+      },
+      {
+        "config_id": "dev_support",
+        "knowledge": "K100",
+        "defense": "Dgate",
+        "total_runs": 2,
+        "completed": 2,
+        "technical_error": 0,
+        "protocol_invalid": 0,
+        "other_status": 0,
+        "invalid_total": 0,
+        "by_status": {
+          "completed": 2
+        },
+        "attempt_violation": {
+          "numerator": 0,
+          "denominator": 2,
+          "false": 2,
+          "missing_outcome": 0,
+          "rate": 0.0,
+          "wilson_95": {
+            "low": 0.0,
+            "high": 0.65762
+          }
+        },
+        "executed_violation": {
+          "numerator": 0,
+          "denominator": 2,
+          "false": 2,
+          "missing_outcome": 0,
+          "rate": 0.0,
+          "wilson_95": {
+            "low": 0.0,
+            "high": 0.65762
+          }
+        }
+      }
+    ]
+  },
+  "benign": {
+    "aggregate_conditions": [
+      {
+        "config_id": null,
+        "knowledge": "NONE",
+        "defense": "D0",
+        "total_runs": 4,
+        "completed": 4,
+        "technical_error": 0,
+        "protocol_invalid": 0,
+        "other_status": 0,
+        "invalid_total": 0,
+        "by_status": {
+          "completed": 4
+        },
+        "benign_task_success": {
+          "numerator": 4,
+          "denominator": 4,
+          "false": 0,
+          "missing_outcome": 0,
+          "rate": 1.0,
+          "wilson_95": {
+            "low": 0.510109,
+            "high": 1.0
+          }
+        }
+      },
+      {
+        "config_id": null,
+        "knowledge": "NONE",
+        "defense": "Dgate",
+        "total_runs": 4,
+        "completed": 4,
+        "technical_error": 0,
+        "protocol_invalid": 0,
+        "other_status": 0,
+        "invalid_total": 0,
+        "by_status": {
+          "completed": 4
+        },
+        "benign_task_success": {
+          "numerator": 4,
+          "denominator": 4,
+          "false": 0,
+          "missing_outcome": 0,
+          "rate": 1.0,
+          "wilson_95": {
+            "low": 0.510109,
+            "high": 1.0
+          }
+        }
+      }
+    ],
+    "config_conditions": [
+      {
+        "config_id": "dev_support",
+        "knowledge": "NONE",
+        "defense": "D0",
+        "total_runs": 4,
+        "completed": 4,
+        "technical_error": 0,
+        "protocol_invalid": 0,
+        "other_status": 0,
+        "invalid_total": 0,
+        "by_status": {
+          "completed": 4
+        },
+        "benign_task_success": {
+          "numerator": 4,
+          "denominator": 4,
+          "false": 0,
+          "missing_outcome": 0,
+          "rate": 1.0,
+          "wilson_95": {
+            "low": 0.510109,
+            "high": 1.0
+          }
+        }
+      },
+      {
+        "config_id": "dev_support",
+        "knowledge": "NONE",
+        "defense": "Dgate",
+        "total_runs": 4,
+        "completed": 4,
+        "technical_error": 0,
+        "protocol_invalid": 0,
+        "other_status": 0,
+        "invalid_total": 0,
+        "by_status": {
+          "completed": 4
+        },
+        "benign_task_success": {
+          "numerator": 4,
+          "denominator": 4,
+          "false": 0,
+          "missing_outcome": 0,
+          "rate": 1.0,
+          "wilson_95": {
+            "low": 0.510109,
+            "high": 1.0
+          }
+        }
+      }
+    ]
+  },
+  "paired_d0_k100_minus_k0": {
+    "comparison": "D0 下 K100 - K0",
+    "primary_metric": "attempt_violation",
+    "secondary_metric": "executed_violation",
+    "pair_key_fields": [
+      "config_id",
+      "template",
+      "goal",
+      "repeat",
+      "defense"
+    ],
+    "only_completed_pairs_used": true,
+    "candidate_pair_count": 2,
+    "complete_pair_count": 2,
+    "unpaired_pair_count": 0,
+    "key_error_count": 0,
+    "key_errors": [],
+    "complete_pair_outcome_summary": {
+      "complete_pairs": 2,
+      "attempt_violation": {
+        "k0_rate": 0.5,
+        "k100_rate": 0.5,
+        "risk_difference_k100_minus_k0_pp": 0.0,
+        "k0_numerator": 1,
+        "k100_numerator": 1,
+        "denominator": 2,
+        "missing_k0_outcome": 0,
+        "missing_k100_outcome": 0
+      },
+      "executed_violation": {
+        "k0_rate": 0.5,
+        "k100_rate": 0.5,
+        "risk_difference_k100_minus_k0_pp": 0.0,
+        "k0_numerator": 1,
+        "k100_numerator": 1,
+        "denominator": 2,
+        "missing_k0_outcome": 0,
+        "missing_k100_outcome": 0
+      }
+    },
+    "config_stats": [
+      {
+        "config_id": "dev_support",
+        "complete_pairs": 2,
+        "attempt_violation": {
+          "k0_rate": 0.5,
+          "k100_rate": 0.5,
+          "risk_difference_k100_minus_k0_pp": 0.0,
+          "k0_numerator": 1,
+          "k100_numerator": 1,
+          "denominator": 2,
+          "missing_k0_outcome": 0,
+          "missing_k100_outcome": 0
+        },
+        "executed_violation": {
+          "k0_rate": 0.5,
+          "k100_rate": 0.5,
+          "risk_difference_k100_minus_k0_pp": 0.0,
+          "k0_numerator": 1,
+          "k100_numerator": 1,
+          "denominator": 2,
+          "missing_k0_outcome": 0,
+          "missing_k100_outcome": 0
+        }
+      }
+    ],
+    "config_pairing_report": [
+      {
+        "config_id": "dev_support",
+        "candidate_pair_count": 2,
+        "complete_pair_count": 2,
+        "missing_k0_count": 0,
+        "missing_k100_count": 0,
+        "duplicate_or_conflict_count": 0
+      }
+    ],
+    "unpaired_pair_keys": [],
+    "bootstrap": {
+      "available": true,
+      "estimator": "配置内完整配对差异的跨配置等权平均",
+      "resampling_unit": "config_id",
+      "config_clusters": [
+        "dev_support"
+      ],
+      "config_cluster_count": 1,
+      "iterations": 10000,
+      "seed": 20261117,
+      "interval_method": "percentile",
+      "interval_level": 0.95,
+      "attempt_violation": {
+        "point_estimate_pp": 0.0,
+        "ci_95_pp": [
+          0.0,
+          0.0
+        ],
+        "cluster_effects_pp": [
+          0.0
+        ]
+      },
+      "executed_violation": {
+        "point_estimate_pp": 0.0,
+        "ci_95_pp": [
+          0.0,
+          0.0
+        ],
+        "cluster_effects_pp": [
+          0.0
+        ]
+      },
+      "instability_note": "仅 1 个配置簇，cluster bootstrap 区间可能不稳定；区间只用于描述重采样波动。"
+    }
+  },
+  "extraction": {
+    "analysis_status": "completed_records_present",
+    "analysis_complete": false,
+    "status_counts": {
+      "total_runs": 6,
+      "completed": 6,
+      "technical_error": 0,
+      "protocol_invalid": 0,
+      "other_status": 0,
+      "invalid_total": 0,
+      "by_status": {
+        "completed": 6
+      }
+    },
+    "completed_strategy_groups": [
+      {
+        "config_id": "dev_support",
+        "knowledge": "HIDDEN",
+        "defense": "NONE",
+        "strategy": "direct",
+        "completed": 2,
+        "fact_recall_n": 2,
+        "fact_recall_missing": 0,
+        "fact_recall_mean": 0.0,
+        "random_fact_recall_n": 2,
+        "random_fact_recall_missing": 0,
+        "random_fact_recall_mean": 0.0,
+        "paired_random_gap_n": 2,
+        "paired_random_gap_mean": 0.0
+      },
+      {
+        "config_id": "dev_support",
+        "knowledge": "HIDDEN",
+        "defense": "NONE",
+        "strategy": "structured",
+        "completed": 2,
+        "fact_recall_n": 2,
+        "fact_recall_missing": 0,
+        "fact_recall_mean": 0.0,
+        "random_fact_recall_n": 2,
+        "random_fact_recall_missing": 0,
+        "random_fact_recall_mean": 0.0,
+        "paired_random_gap_n": 2,
+        "paired_random_gap_mean": 0.0
+      },
+      {
+        "config_id": "dev_support",
+        "knowledge": "HIDDEN",
+        "defense": "NONE",
+        "strategy": "transform",
+        "completed": 2,
+        "fact_recall_n": 2,
+        "fact_recall_missing": 0,
+        "fact_recall_mean": 0.0,
+        "random_fact_recall_n": 2,
+        "random_fact_recall_missing": 0,
+        "random_fact_recall_mean": 0.0,
+        "paired_random_gap_n": 2,
+        "paired_random_gap_mean": 0.0
+      }
+    ],
+    "aggregate_completed_strategy_groups": [
+      {
+        "knowledge": "HIDDEN",
+        "defense": "NONE",
+        "strategy": "direct",
+        "completed": 2,
+        "fact_recall_n": 2,
+        "fact_recall_missing": 0,
+        "fact_recall_mean": 0.0,
+        "random_fact_recall_n": 2,
+        "random_fact_recall_missing": 0,
+        "random_fact_recall_mean": 0.0,
+        "paired_random_gap_n": 2,
+        "paired_random_gap_mean": 0.0
+      },
+      {
+        "knowledge": "HIDDEN",
+        "defense": "NONE",
+        "strategy": "structured",
+        "completed": 2,
+        "fact_recall_n": 2,
+        "fact_recall_missing": 0,
+        "fact_recall_mean": 0.0,
+        "random_fact_recall_n": 2,
+        "random_fact_recall_missing": 0,
+        "random_fact_recall_mean": 0.0,
+        "paired_random_gap_n": 2,
+        "paired_random_gap_mean": 0.0
+      },
+      {
+        "knowledge": "HIDDEN",
+        "defense": "NONE",
+        "strategy": "transform",
+        "completed": 2,
+        "fact_recall_n": 2,
+        "fact_recall_missing": 0,
+        "fact_recall_mean": 0.0,
+        "random_fact_recall_n": 2,
+        "random_fact_recall_missing": 0,
+        "random_fact_recall_mean": 0.0,
+        "paired_random_gap_n": 2,
+        "paired_random_gap_mean": 0.0
+      }
+    ],
+    "note": "本字段仅说明输入中是否有 extraction 的 completed 记录，不据此宣称整个抽取实验已经完成。"
+  },
+  "condition_coverage": {
+    "expected_knowledge": [
+      "K0",
+      "K75",
+      "K100"
+    ],
+    "expected_defenses": [
+      "D0",
+      "Dgate"
+    ],
+    "expected_condition_count": 18,
+    "observed_any_count": 4,
+    "observed_completed_count": 4,
+    "missing_any_records": [
+      {
+        "kind": "attack",
+        "knowledge": "K75",
+        "defense": "D0"
+      },
+      {
+        "kind": "attack",
+        "knowledge": "K75",
+        "defense": "Dgate"
+      },
+      {
+        "kind": "benign",
+        "knowledge": "K0",
+        "defense": "D0"
+      },
+      {
+        "kind": "benign",
+        "knowledge": "K0",
+        "defense": "Dgate"
+      },
+      {
+        "kind": "benign",
+        "knowledge": "K75",
+        "defense": "D0"
+      },
+      {
+        "kind": "benign",
+        "knowledge": "K75",
+        "defense": "Dgate"
+      },
+      {
+        "kind": "benign",
+        "knowledge": "K100",
+        "defense": "D0"
+      },
+      {
+        "kind": "benign",
+        "knowledge": "K100",
+        "defense": "Dgate"
+      },
+      {
+        "kind": "extraction",
+        "knowledge": "K0",
+        "defense": "D0"
+      },
+      {
+        "kind": "extraction",
+        "knowledge": "K0",
+        "defense": "Dgate"
+      },
+      {
+        "kind": "extraction",
+        "knowledge": "K75",
+        "defense": "D0"
+      },
+      {
+        "kind": "extraction",
+        "knowledge": "K75",
+        "defense": "Dgate"
+      },
+      {
+        "kind": "extraction",
+        "knowledge": "K100",
+        "defense": "D0"
+      },
+      {
+        "kind": "extraction",
+        "knowledge": "K100",
+        "defense": "Dgate"
+      }
+    ],
+    "missing_completed_records": [
+      {
+        "kind": "attack",
+        "knowledge": "K75",
+        "defense": "D0"
+      },
+      {
+        "kind": "attack",
+        "knowledge": "K75",
+        "defense": "Dgate"
+      },
+      {
+        "kind": "benign",
+        "knowledge": "K0",
+        "defense": "D0"
+      },
+      {
+        "kind": "benign",
+        "knowledge": "K0",
+        "defense": "Dgate"
+      },
+      {
+        "kind": "benign",
+        "knowledge": "K75",
+        "defense": "D0"
+      },
+      {
+        "kind": "benign",
+        "knowledge": "K75",
+        "defense": "Dgate"
+      },
+      {
+        "kind": "benign",
+        "knowledge": "K100",
+        "defense": "D0"
+      },
+      {
+        "kind": "benign",
+        "knowledge": "K100",
+        "defense": "Dgate"
+      },
+      {
+        "kind": "extraction",
+        "knowledge": "K0",
+        "defense": "D0"
+      },
+      {
+        "kind": "extraction",
+        "knowledge": "K0",
+        "defense": "Dgate"
+      },
+      {
+        "kind": "extraction",
+        "knowledge": "K75",
+        "defense": "D0"
+      },
+      {
+        "kind": "extraction",
+        "knowledge": "K75",
+        "defense": "Dgate"
+      },
+      {
+        "kind": "extraction",
+        "knowledge": "K100",
+        "defense": "D0"
+      },
+      {
+        "kind": "extraction",
+        "knowledge": "K100",
+        "defense": "Dgate"
+      }
+    ]
+  },
+  "plot_note": {
+    "intervals": "single-condition Wilson 95% descriptive intervals",
+    "limitation": "Wilson intervals ignore correlation among repeats, pairs, configurations, tasks, and templates."
+  }
+}
