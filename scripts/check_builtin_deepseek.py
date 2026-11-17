@@ -175,7 +175,7 @@ def main():
             except subprocess.TimeoutExpired:
                 process.kill()
                 process.wait(timeout=5)
-    output = pathlib.Path(__file__).resolve().parents[1] / "第一阶段-内置接口检查.json"
+    output = pathlib.Path(__file__).resolve().parents[1] / "docs" / "evidence" / "interface-check.json"
     output.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps({"completed": report["completed"], "error_count": len(report["errors"]),
                       "turn_status": report.get("turn_status"), "report_written": True}), flush=True)

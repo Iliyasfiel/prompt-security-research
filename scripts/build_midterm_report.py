@@ -11,7 +11,7 @@ from docx.shared import Cm, Inches, Pt, RGBColor
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "第一阶段-中期报告.docx"
+OUTPUT = ROOT / "reports" / "stage1-midterm-report.docx"
 FIGURE = ROOT / "runs" / "formal" / "analysis" / "attempt_execute.png"
 
 

@@ -31,15 +31,23 @@ D0 下 K100 相对 K0 的配对风险差为 -10.4 个百分点。当前数据不
 
 这些结果仅来自一个模型路由、4 个测试配置和有限重复，不声明统计显著性或普遍性。
 
+## 项目文档
+
+- [文档索引](docs/README.md)
+- [AI 协作规则](AGENTS.md)
+- [研究计划](docs/project-plan.md)
+- [文献调研与证据表](docs/literature.md)
+- [第一阶段进度](docs/stage1-progress.md)
+- [正式实验分析复核](docs/stage1-analysis.md)
+- [AI 使用记录](docs/ai-use.md)
+
 ## 报告与证据
 
-- `第一阶段-中期报告.docx`：提交版 Word
-- `第一阶段-中期报告.pdf`：提交版 PDF
-- `第一阶段-中期报告.md`：可编辑报告
-- `第一阶段-分析复核.md`：统计复核和解释边界
-- `runs/formal/analysis/results.md`：自动统计
-- `runs/formal/audit.json`：数据完整性审计
-- `AI使用记录.md`：AI 执行与审核边界
+- [中期报告 Word](reports/stage1-midterm-report.docx)
+- [中期报告 PDF](reports/stage1-midterm-report.pdf)
+- [中期报告 Markdown](reports/stage1-midterm-report.md)
+- [自动统计](runs/formal/analysis/results.md)
+- [完整性与隔离审计](runs/formal/audit.json)
 
 ## 复现入口
 
@@ -60,10 +68,12 @@ python scripts/audit_runs.py --run formal
 
 - `scripts/`：场景、运行器、数据审计与报告构建
 - `analysis/`：统计脚本
+- `docs/`：方案、文献、阶段记录和证据说明
+- `reports/`：Word、PDF 和 Markdown 报告
 - `runs/pilot/`：开发闭环与 1.2 试跑
 - `runs/pilot-v1-explicit-note/`：保留的早期地板试跑
 - `runs/formal/`：冻结正式批次、轨迹与分析
 
 ## 引用
 
-相关工作、准确性边界和一级来源见 `文献调研与证据表.md` 与正式报告。
+相关工作、准确性边界和一级来源见 [文献调研与证据表](docs/literature.md) 与正式报告。

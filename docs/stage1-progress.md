@@ -12,9 +12,9 @@
 
 ## 1.1 产物
 
-- [研究方案](./第一阶段-执行方案.md)
-- [文献调研与证据表](./文献调研与证据表.md)
-- [内置模型检查记录](./第一阶段-内置接口检查.json)
+- [研究方案](./stage1-execution.md)
+- [文献调研与证据表](./literature.md)
+- [内置模型检查记录](./evidence/interface-check.json)
 
 ## 1.2 产物
 
@@ -22,7 +22,7 @@
 - 统计脚本：`analysis/analyze.py`
 - 开发试跑：`runs/pilot/results.jsonl`
 - 只读抽取试跑：`runs/pilot/extraction/results.jsonl`
-- 准入审计：[runs/pilot/audit.json](./runs/pilot/audit.json)
+- 准入审计：[runs/pilot/audit.json](../runs/pilot/audit.json)
 
 1.2 的关键事实：
 
@@ -47,18 +47,17 @@
 
 - 正式运行：`runs/formal/combined-results.jsonl`
 - 自动统计：`runs/formal/analysis/results.md`
-- 完整性审计：[runs/formal/audit.json](./runs/formal/audit.json)
-- 人工复核说明：[第一阶段-分析复核.md](./第一阶段-分析复核.md)
+- 完整性审计：[runs/formal/audit.json](../runs/formal/audit.json)
+- 分析复核说明：[stage1-analysis.md](./stage1-analysis.md)
 
 正式结果不支持“披露更多规则必然提高越权率”：D0 下 K100−K0 为 −10.4 个百分点，4 个配置簇的重采样区间不稳定。Dgate 将 144 个攻击 episode 的模拟执行降为 0，正常任务 64/64 成功。当前抽取策略严格业务事实覆盖约 0.8%，随机流程标识命中为 0。
 
 ## 1.5 产物
 
-- 提交版 Word：[第一阶段-中期报告.docx](./第一阶段-中期报告.docx)
-- 提交版 PDF：[第一阶段-中期报告.pdf](./第一阶段-中期报告.pdf)
-- 可编辑 Markdown：[第一阶段-中期报告.md](./第一阶段-中期报告.md)
-- 可编辑草稿：[第一阶段-中期报告-草稿.md](./第一阶段-中期报告-草稿.md)
+- 提交版 Word：[stage1-midterm-report.docx](../reports/stage1-midterm-report.docx)
+- 提交版 PDF：[stage1-midterm-report.pdf](../reports/stage1-midterm-report.pdf)
+- 可编辑 Markdown：[stage1-midterm-report.md](../reports/stage1-midterm-report.md)
 - 报告构建程序：`scripts/build_midterm_report.py`
-- AI 执行与审核边界：[AI使用记录.md](./AI使用记录.md)
+- AI 执行与审核边界：[ai-use.md](./ai-use.md)
 
 整个第一阶段 1.1–1.5 已完成。正式报告明确采用负结果和证据边界，不把平台实验外推为真实系统越权。

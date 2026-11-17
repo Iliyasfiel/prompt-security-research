@@ -6,15 +6,15 @@
 
 | 工作 | 执行方式 | 可复核证据 |
 |---|---|---|
-| 文献调研 | AI 检索作者论文、正式出版页和数据资源，阅读相关方法、实验与限制章节并整理比较 | [文献调研与证据表](./文献调研与证据表.md) |
-| 研究方案 | AI 根据文献和用户约束起草；用户确认保留原题、使用现有 DeepSeek、中期截止为 11 月 20 日 | [研究计划](./研究计划-v1.md)、[第一阶段方案](./第一阶段-执行方案.md)、[进度](./第一阶段-进度.md) |
-| 模型接入 | AI 检查本机协议 schema，并通过 App Server 复用已有 DeepSeek 路由；未修改全局配置或要求新密钥 | [接口检查记录](./第一阶段-内置接口检查.json) |
+| 文献调研 | AI 检索作者论文、正式出版页和数据资源，阅读相关方法、实验与限制章节并整理比较 | [文献调研与证据表](./literature.md) |
+| 研究方案 | AI 根据文献和用户约束起草；用户确认保留原题、使用现有 DeepSeek、中期截止为 11 月 20 日 | [研究计划](./project-plan.md)、[第一阶段方案](./stage1-execution.md)、[进度](./stage1-progress.md) |
+| 模型接入 | AI 检查本机协议 schema，并通过 App Server 复用已有 DeepSeek 路由；未修改全局配置或要求新密钥 | [接口检查记录](./evidence/interface-check.json) |
 | 场景与程序 | AI 编写场景生成、工具执行、状态判定、攻击候选生成、统计和审计程序 | `scripts/experiment.py`、`analysis/analyze.py`、`scripts/audit_runs.py` |
 | 攻击候选 | 独立新上下文的 DeepSeek 子代理生成；只接收公共工具、攻击目标、模板和本条件知识 | `runs/formal/candidates/`、`runs/formal/traces/` |
 | 被测 Agent | 通过 ephemeral App Server 会话，应用指令走 `baseInstructions`，两个模拟业务工具走 `dynamicTools` | 见正式 manifest、traces 和 audit |
 | 正式实验 | 单模型、4 测试配置、288 个攻击 episode、64 个正常 episode、24 个抽取会话 | `runs/formal/combined-results.jsonl` |
 | 统计 | AI 编写并运行固定规则；程序计算计数、Wilson 描述区间、配对风险差和 4 配置簇重采样 | `runs/formal/analysis/` |
-| 报告 | AI 起草，主要数字逐项与冻结结果核对；最终 DOCX 完成 8 页逐页视觉检查 | [中期报告 DOCX](./第一阶段-中期报告.docx)、[PDF](./第一阶段-中期报告.pdf) |
+| 报告 | AI 起草，主要数字逐项与冻结结果核对；最终 DOCX 完成 8 页逐页视觉检查 | [中期报告 DOCX](../reports/stage1-midterm-report.docx)、[PDF](../reports/stage1-midterm-report.pdf) |
 
 ## 审核边界
 
@@ -25,4 +25,4 @@
 - 平台仍提供固定后台工具说明；实验只保护自建应用指令中的业务事实，不能外推为裸模型或任意部署环境。
 - 没有对真实业务系统、账户、资金、成绩或文档执行任何写操作。
 
-完整结果与限制以[分析复核](./第一阶段-分析复核.md)和正式报告为准。
+完整结果与限制以[分析复核](./stage1-analysis.md)和正式报告为准。
