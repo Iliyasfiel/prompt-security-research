@@ -50,9 +50,15 @@
 - 完整性审计：[runs/formal/audit.json](../runs/formal/audit.json)
 - 分析复核说明：[stage1-analysis.md](./stage1-analysis.md)
 
-正式结果不支持“披露更多规则必然提高越权率”：D0 下 K100−K0 为 −10.4 个百分点，4 个配置簇的重采样区间不稳定。Dgate 将 144 个攻击 episode 的模拟执行降为 0，正常任务 64/64 成功。当前抽取策略严格业务事实覆盖约 0.8%，随机流程标识命中为 0。
+旧宽口径标签的 D0 下 K100−K0 为 −10.4 个百分点，但评分含默认备注文案检查，与正式用户请求不一致，不能作为严格权限风险结论。严格授权离线复核在 D0 下 K0/K75/K100 分别为 0/48、0/48、1/48，Dgate 均为 0/48。正常任务 64/64 成功。抽取总体严格事实覆盖为 0.26%，结构化组为 0.78%，随机流程标识命中为 0。
 
 ## 1.5 产物
+
+- [逐页讲稿（Markdown）](../reports/stage1-midterm-slides/speech.md)：对应当前 12 页网页汇报，含完整口述、指图提示与页间过渡。
+
+网页汇报现合并为 12 页：将 RQ1–RQ3 操作定义、文献与阶段进度、知识条件与样本设计集中呈现，保留真实攻击与抽取案例。增加知识覆盖格、工具调用链、批次流程、案例状态图、宽标签与严格授权对比、调用与执行对比和抽取策略图。`reports/stage1-midterm-slides/metric-review.json` 保存现有轨迹离线复核；没有新模型运行，也没有改动 `runs/formal/`。旧报告 DOCX/PDF 尚未同步评分口径更正，引用结论时优先参考更新后的分析说明。
+
+2026-11-18 汇报更新：新增 [guizang 横向翻页网页 PPT](../reports/stage1-midterm-slides/index.html) 和[页面大纲与提词](../reports/stage1-midterm-slides/outline.md)。根据原始 24 条抽取记录核对，总体严格事实覆盖均值为 **0.26%**，结构化策略组均值为 **0.78%（约 0.8%）**；旧报告中将 0.8% 写成总体均值的表述需按此更正。网页稿采用正确口径，冻结原始数据保持原样。
 
 - 提交版 Word：[stage1-midterm-report.docx](../reports/stage1-midterm-report.docx)
 - 提交版 PDF：[stage1-midterm-report.pdf](../reports/stage1-midterm-report.pdf)
