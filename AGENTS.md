@@ -69,6 +69,14 @@ The report DOCX and PDF are derived outputs. Do not treat them as editable sourc
 - Keep documentation concise and keep one canonical location for each artifact.
 - Delete duplicate drafts rather than maintaining parallel prose.
 
+## Presentations
+
+- Use `guizang-ppt-skill` for PPT work. Maintain the existing Swiss-style HTML deck; do not switch to native PPTX unless the user explicitly requests it.
+- Build with `python scripts/build_midterm_web.py`. Keep the deck, outline, Markdown speech, and backup PDF together in `reports/stage1-midterm-slides/`.
+- Keep slide IDs, speaker notes, charts, and `speech.md` aligned. Recompute chart values from recorded data; retain the distinction between old broad labels, strict authorization violations, and exact target success.
+- After changing slides, export `slides.pdf` from the current HTML: one landscape 16:9 slide per page, backgrounds enabled, browser headers/footers and presentation controls hidden. Use the built-in print stylesheet; PDF is a derived backup, not an editable source.
+- Run the skill's presenter and Swiss validators, then inspect the PDF page count and rendered pages for missing charts, clipping, or blank pages. Keep rendering checks in ignored `qa/`; avoid introducing an export framework.
+
 ## Model and Environment
 
 The current route is `auto/deepseek-v4.1-flash` through the local Codex App Server. The application prompt uses `baseInstructions` and simulated tools use `dynamicTools`.

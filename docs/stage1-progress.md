@@ -54,6 +54,8 @@
 
 ## 1.5 产物
 
+- [汇报备用 PDF](../reports/stage1-midterm-slides/slides.pdf)：从当前 guizang 网页稿导出，12 页、16:9 横向；与既有中期报告 PDF 分开存放。
+
 - [逐页讲稿（Markdown）](../reports/stage1-midterm-slides/speech.md)：对应当前 12 页网页汇报，含完整口述、指图提示与页间过渡。
 
 网页汇报现合并为 12 页：将 RQ1–RQ3 操作定义、文献与阶段进度、知识条件与样本设计集中呈现，保留真实攻击与抽取案例。增加知识覆盖格、工具调用链、批次流程、案例状态图、宽标签与严格授权对比、调用与执行对比和抽取策略图。`reports/stage1-midterm-slides/metric-review.json` 保存现有轨迹离线复核；没有新模型运行，也没有改动 `runs/formal/`。旧报告 DOCX/PDF 尚未同步评分口径更正，引用结论时优先参考更新后的分析说明。

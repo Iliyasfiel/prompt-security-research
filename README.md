@@ -44,6 +44,7 @@ D0 下 K100 相对 K0 的旧宽口径标签差为 -10.4 个百分点。2026-11-1
 ## 报告与证据
 
 - [中期汇报网页 PPT（guizang）](reports/stage1-midterm-slides/index.html)：浏览器打开，方向键翻页，`P` 查看演讲备注
+- [中期汇报备用 PDF](reports/stage1-midterm-slides/slides.pdf)：12 页横向幻灯片，与网页稿对应；浏览器打印时启用背景、关闭页眉页脚
 - [中期汇报逐页讲稿（Markdown）](reports/stage1-midterm-slides/speech.md)：对应当前 12 页网页稿，含完整口述与页间过渡
 
 - [中期报告 Word](reports/stage1-midterm-report.docx)
