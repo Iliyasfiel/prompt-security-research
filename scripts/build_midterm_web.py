@@ -186,6 +186,16 @@ def main():
     .chart-legend{display:flex;gap:2vw;margin-bottom:1.5vh;font-size:16px}.chart-legend span:first-child{color:var(--accent)}.chart-legend span:last-child{color:var(--ink)}.metric-row{display:grid;grid-template-columns:105px 1fr;gap:.8vw;align-items:center;margin:1.4vh 0}.metric-row>span{font-size:18px}.metric-track{height:2.2vh;min-height:16px;background:#e2e2e2;position:relative;margin:3px 0;margin-right:50px}.metric-track i{display:block;height:100%;background:var(--accent)}.metric-track.strict i{background:repeating-linear-gradient(45deg,#222,#222 3px,#888 3px,#888 6px)}.metric-track b{position:absolute;left:calc(100% + 8px);top:-3px;font-size:16px;font-weight:500;white-space:nowrap}
     .execution-bar{height:1.8vh;background:#ddd;margin-top:2vh}.execution-bar i{display:block;height:100%;background:var(--accent)}.extract-row{display:grid;grid-template-columns:140px 1fr 70px;gap:.6vw;align-items:center;margin:2.2vh 0;font-size:18px}.extract-track{height:2.5vh;background:#ddd}.extract-track i{display:block;height:100%;background:var(--accent)}
     .cover-summary{flex:1;display:flex;flex-direction:column;justify-content:space-evenly;gap:3vh}.cover-summary>p{font-size:max(22px,1.8vw)}.accent .flow-node,.accent .research-panel{background:transparent;border-color:rgba(255,255,255,.5)}.accent .flow-node p,.accent .flow-arrow{color:white}.cover-summary .research-panel h3{font-size:6vh;font-weight:200;margin-bottom:.5vh}
+    @page{size:1280px 720px;margin:0}
+    @media print{
+      html,body{width:1280px!important;height:auto!important;overflow:visible!important;margin:0!important;padding:0!important;background:white!important;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+      #deck{position:static!important;inset:auto!important;display:block!important;width:1280px!important;height:auto!important;transform:none!important;transition:none!important;will-change:auto!important}
+      #deck>.slide{position:relative!important;display:flex!important;flex:none!important;width:1280px!important;height:720px!important;min-height:720px!important;margin:0!important;break-inside:avoid;break-after:page;overflow:hidden!important;transform:none!important;opacity:1!important;visibility:visible!important}
+      #deck>.slide:last-child{break-after:auto}
+      #deck .canvas-card{width:1280px!important;height:720px!important}
+      #deck [data-anim],#deck [data-anim] *{opacity:1!important;visibility:visible!important;transform:none!important;animation:none!important;transition:none!important}
+      body>*:not(#deck),.ascii-bg{display:none!important}
+    }
     </style>'''
     template=template.replace('</head>',css+'</head>')
     start=template.index('<div id="deck">')+len('<div id="deck">')
